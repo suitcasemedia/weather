@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import {
   getPendingSelector,
   getWeatherSelector,
@@ -18,8 +18,8 @@ const App = () => {
   const [city, updateCity] = useState('London');
 
   useEffect(() => {
-    dispatch(fetchWeatherRequest('london'));
-  }, []);
+    dispatch(fetchWeatherRequest('London'));
+  }, [dispatch]);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     updateCity(e.currentTarget.value);
