@@ -2,6 +2,7 @@
   "name": "redux-saga-guide",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://loving-goodall-768dba.netlify.app/",
   "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/react-dom": "^17.0.11",
