@@ -1,12 +1,15 @@
 import axios, { AxiosResponse } from "axios";
 import { all, call, put, takeLatest } from "redux-saga/effects";
-
 import { fetchWeatherFailure, fetchWeatherSuccess } from "./actions";
 import { FETCH_WEATHER_REQUEST } from "./actionTypes";
 import { FetchWeatherRequest, IWeather } from "./types";
+require('dotenv').config()
+
+const {REACT_APP_WEATHER_API_KEY} = process.env
 
 const getWeathers = (city:string)=>
-  axios.get<IWeather[]>(`http://api.weatherapi.com/v1/current.json?key=cbd85258726241f0bde05059210612&q=${city}&aqi=no`);
+
+  axios.get<IWeather[]>(`http://api.weatherapi.com/v1/current.json?key=${REACT_APP_WEATHER_API_KEY}&q=${city}&aqi=no`);
 
 /*
   Worker Saga: Fired on FETCH_Weather_REQUEST action
