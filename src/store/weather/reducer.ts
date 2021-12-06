@@ -52,7 +52,7 @@ const initialState: WeatherState = {
   error: null,
 };
 
-export default (state = initialState, action: WeatherActions) => {
+const WeatherReducer = (state = initialState, action: WeatherActions) => {
   switch (action.type) {
     case FETCH_WEATHER_REQUEST:
       return {
@@ -80,3 +80,5 @@ export default (state = initialState, action: WeatherActions) => {
       };
   }
 };
+
+export default WeatherReducer;

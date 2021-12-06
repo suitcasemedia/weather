@@ -1,10 +1,6 @@
 import React  from 'react';
 import  classes from  './cityselect.module.scss';
 
-interface SyntheticEvent<T> {
-  currentTarget: EventTarget & T;
-}
-
 
 type TOwnProps = {
   handleChange:  Function;

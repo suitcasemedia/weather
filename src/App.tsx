@@ -9,9 +9,7 @@ import { fetchWeatherRequest } from './store/weather/actions';
 import CitySelectInput from './components/CitySelectInput/CitySelectInput';
 import SCGDial from './components/SVGDial/SVGDial';
 import main from './global.module.scss';
-interface SyntheticEvent<T> {
-  currentTarget: EventTarget & T;
-}
+
 const App = () => {
   const dispatch = useDispatch();
   const pending = useSelector(getPendingSelector);
