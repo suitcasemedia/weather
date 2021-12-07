@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getPendingSelector,
   getWeatherSelector,
   getErrorSelector,
 } from './store/weather/selectors';
 import { fetchWeatherRequest } from './store/weather/actions';
-import CitySelectInput from './components/CitySelectInput/CitySelectInput';
-import SCGDial from './components/SVGDial/SVGDial';
+import Widget from './components/Widget/Widget';
 import main from './global.module.scss';
-
 const App = () => {
   const dispatch = useDispatch();
   const pending = useSelector(getPendingSelector);
@@ -25,21 +23,16 @@ const App = () => {
     updateCity(e.currentTarget.value);
     dispatch(fetchWeatherRequest(e.currentTarget.value));
   };
-return(
-  <div className={main.container}>
-      {pending ? (
-        <div>Loading...</div>
-      ) : error ? (
-        <div>Error</div>
-      ) : (
-    <article>
-      <CitySelectInput handleChange={handleChange} city={city} />
-      The current temperature in {weather.location.name} is{' '}
-      {weather.current.temp_c} degrees celcius.
-      <SCGDial temp_c={weather.current.temp_c} />
-    </article>
-  )}
-  </div>
-);
+  return (
+    <div className={main.container}>
+      <Widget
+        error={error}
+        pending={pending}
+        handleChange={handleChange}
+        city={city}
+        weather={weather}
+      />
+    </div>
+  );
 };
 export default App;
