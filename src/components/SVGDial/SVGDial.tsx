@@ -13,8 +13,8 @@ type TOwnProps = {
               <div className={classes.dial}>
                 <svg
                   className="temperature"
-                  width="400"
-                  height="342"
+                  width="260"
+                  height="242"
                   viewBox="0 0 400 342"
                 >
                   <defs>
@@ -25,13 +25,13 @@ type TOwnProps = {
                       x2="100%"
                       y2="0%"
                     >
-                      <stop offset="0%" stop-color="#06AFFD" />
+                      <stop offset="0%" stopColor="#06AFFD" />
 
                       <stop
                         offset="30%"
-                        stop-color="hsl(18.895027624309392, 84.18604651162791%, 57.84313725490197%)"
+                        stopColor="hsl(18.895027624309392, 84.18604651162791%, 57.84313725490197%)"
                       />
-                      <stop offset="100%" stop-color="#ff00007d" />
+                      <stop offset="100%" stopColor="#ff00007d" />
                     </linearGradient>
                   </defs>
                   <defs>
@@ -42,9 +42,9 @@ type TOwnProps = {
                       x2="100%"
                       y2="0%"
                     >
-                      <stop offset="50%" stop-color="#fff" />
+                      <stop offset="50%" stopColor="#fff" />
 
-                      <stop offset="90%" stop-color="rgba(255,255,255,0)" />
+                      <stop offset="90%" stopColor="rgba(255,255,255,0)" />
                     </linearGradient>
                   </defs>
                   <defs>
